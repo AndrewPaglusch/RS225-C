@@ -48,6 +48,20 @@ mingw32-make clean && mingw32-make -j4
 
 Default port: **43594**
 
+## Docker
+
+```yaml
+services:
+  rs225:
+    image: ghcr.io/andrewpaglusch/rs225-c:main
+    container_name: rs225
+    restart: unless-stopped
+    ports:
+      - "43594:43594"
+    volumes:
+      - ./players:/app/data/players
+```
+
 ## Paths
 
 ```
